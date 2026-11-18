@@ -1,3 +1,4 @@
+
 // TKD Bank Resource Catalogue
 // Edit this file to add, remove, or update resources.
 // After editing, push to GitHub and the site will update on deploy.
@@ -260,30 +261,30 @@ const resources = [
     title: "Step Sparring 14",
     category: "Step Sparring",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "180 Hook Kick, Jumping Roundhouse Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "180 Hook Kick → Jumping Roundhouse Kick"
   },
   {
     id: "step-15",
     title: "Step Sparring 15",
     category: "Step Sparring",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Jumping 360 Hook Kick, Jumping Roundhouse Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Jumping 360 Hook Kick → Jumping Roundhouse Kick"
   },
   {
     id: "step-16",
     title: "Step Sparring 16",
     category: "Step Sparring",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Step-In Spear Kick, Jumping Front Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Step-In Spear Kick → Jumping Front Kick"
   },
   {
     id: "step-17",
@@ -332,10 +333,10 @@ const resources = [
     title: "Two-Step Sparring 4",
     category: "Two-Step Sparring",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Slide Left, Bottom Cross, Double Pichagi, Double Punch, Axe Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Slide to Left → Bottom Cross ×2 → Step Change → Jumping Double Pichagi → Double Punch → Axe Kick"
   },
 
   // ===== THREE-STEP SPARRING =====
@@ -466,30 +467,30 @@ const resources = [
     title: "X-Block 1",
     category: "X-Block",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Normal X-Block",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Normal X-Block"
   },
   {
     id: "xblock-2",
     title: "X-Block 2",
     category: "X-Block",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "X-Block with Spin",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "X-Block with Spin"
   },
   {
     id: "xblock-3",
     title: "X-Block 3",
     category: "X-Block",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Spinning Side Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Spinning Side Kick"
   },
   {
     id: "xblock-4",
@@ -519,40 +520,70 @@ const resources = [
     title: "4 Corner 1",
     category: "4 Corner",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "No Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "No Kick"
   },
   {
     id: "four-corner-2",
     title: "4 Corner 2",
     category: "4 Corner",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Front Snap Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Front Snap Kick"
   },
   {
     id: "four-corner-3",
     title: "4 Corner 3",
     category: "4 Corner",
     videoUrl: null,
-    description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    description: "Roundhouse Kick",
+    dateAdded: "2026-11-18",
     type: "text",
-    content: ""
+    content: "Roundhouse Kick"
   },
   {
     id: "four-corner-4",
     title: "4 Corner 4",
     category: "4 Corner",
     videoUrl: null,
+    description: "Side Kick",
+    dateAdded: "2026-11-18",
+    type: "text",
+    content: "Side Kick"
+  },
+  {
+    id: "four-corner-5",
+    title: "4 Corner 5",
+    category: "4 Corner",
+    videoUrl: null,
+    description: "180 Side Kick",
+    dateAdded: "2026-11-18",
+    type: "text",
+    content: "180 Side Kick"
+  },
+  {
+    id: "four-corner-6",
+    title: "4 Corner 6",
+    category: "4 Corner",
+    videoUrl: null,
     description: "Coming Soon",
-    dateAdded: "2026-11-17",
+    dateAdded: "2026-11-18",
     type: "text",
     content: ""
+  },
+  {
+    id: "four-corner-7",
+    title: "4 Corner 7",
+    category: "4 Corner",
+    videoUrl: null,
+    description: "Hook Kick",
+    dateAdded: "2026-11-18",
+    type: "text",
+    content: "Hook Kick"
   }
 ];
 
@@ -611,14 +642,17 @@ const categories = [
 // Helper: extract YouTube video ID from various URL formats
 function getYouTubeId(url) {
   if (!url) return null;
+
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
     /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})/
   ];
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match) return match[1];
   }
+
   return null;
 }
 
@@ -632,6 +666,7 @@ function getThumbnail(url) {
 function getEmbedUrl(url) {
   const id = getYouTubeId(url);
   if (!id) return null;
+
   return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&playsinline=1`;
 }
 
